@@ -4,14 +4,16 @@
 
 GetHowManyTrees_exercise <- function(ntaxa=10) {
 	#ape can compute this for us.
-	result <- "__A FUNCTION FROM APE TO DO THIS__(ntaxa)__"
+  result <- howmanytrees(ntaxa)
 	return(result)	
 }
 
 GetAlignment_exercise <- function() {
 	#Let's see where mafft is installed
-	print(system("which mafft"))
-	data(woodmouse)
-	result <- mafft(" __PUT SOMETHING HERE TO ALIGN__" ) #hint, look up one line
-	return(result)
+  print(system("where mafft")) 
+  #'where' is the windows command for 'which'
+	#had to make sure the folder in which I stored the program was one in which windows would look for programs  
+  data(woodmouse)
+	result <- mafft(woodmouse, path="E:/SCHOOL/Documents-School/Class/EEB_603_PhyloMeth/mafft-7.271-win10/mafft-win/mafft.bat") #hint, look up one line
+  return(result)
 }
